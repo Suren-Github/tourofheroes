@@ -1,0 +1,14 @@
+.heroes-enclose ul li, .display-heroes ul li {
+    list-style-type: none;
+    color: #ad34d2;
+    background: hsl(0, 3%, 79%);
+    padding: 5px 10px;
+    margin: 5px 0;
+    display: block;
+    width: 120px;
+    cursor: pointer;
+}
+
+.hero-selected {
+    background: #171717 !important;
+}

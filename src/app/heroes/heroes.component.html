@@ -1,0 +1,32 @@
+<p>
+  Time: {{timeNow}}
+</p>
+
+
+<div class="heroes-enclose">
+  <h5> Intelligence </h5>
+
+  <label> Enter the hero name:</label>
+  <input [(ngModel)]=h ero.name placeholder="E.g.: Winter Vyren" />
+
+  <ul>
+    <li>{{hero.id}}. {{hero.name | uppercase}}</li>
+  </ul>
+
+</div>
+
+<div *ngIf="displayHeroes" class="display-heroes">
+  <h5> Display Heroes list</h5>
+  <ul>
+    <li *ngFor="let hero of heroes; let idx = index" (click)="displayHeroDetails(hero)" [class.hero-selected] = "hero === selectedHero">
+      {{idx + 1}}. {{hero.name}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedHero">
+  <h5> Selected Hero </h5>
+  <p> {{selectedHero.name}} </p>
+  <input [(ngModel)]="selectedHero.name" placeholder="name" />
+
+</div>
