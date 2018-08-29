@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../schema/hero.schema';
-import { HEROES } from '../data/mock_heroes'; 
+//import { HEROES } from '../data/mock_heroes'; 
+import { HeroService } from '../services/hero/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -16,19 +17,27 @@ export class HeroesComponent implements OnInit {
     name: `Windranger`
   }
 
-  heroes: Hero[] = HEROES;
+  heroes: Hero[]; // = HeroService.getHeroes();
 
   selectedHero: Hero;
 
   displayHeroes = true;
-  
-  constructor() {
 
+  getHeroes(): void {
+    //  this.heroes = this.heroService.getHeroes();
+    
+    this.heroService.getHeroes()
+      .subscribe(heroes => this.heroes = heroes);
+  }
+
+  constructor(private heroService: HeroService) {
   }
 
   ngOnInit() {
     this.displayTime();
+    this.getHeroes();
   }
+
 
   public timeNow = null;
 
