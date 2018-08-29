@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../schema/hero.schema';
+import { Hero } from '../../schema/hero.schema';
 //import { HEROES } from '../data/mock_heroes'; 
-import { HeroService } from '../services/hero/hero.service';
+import { HeroService } from '../../services/hero/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -25,12 +25,12 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     //  this.heroes = this.heroService.getHeroes();
-    
+
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
 
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService) {  
   }
 
   ngOnInit() {
@@ -56,5 +56,5 @@ export class HeroesComponent implements OnInit {
     setInterval(() => {
       this.countTime();
     }, 1000);
-  };
+  }
 }
