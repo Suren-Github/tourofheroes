@@ -1,4 +1,5 @@
 <div *ngIf="messageService.messages.length">
+  <h3> Messages: </h3>
   <button (click)="messageService.clear()">Clear</button>
 
   <div *ngFor="let msg of messageService.messages; let idx = index;">

@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[]; // = HeroService.getHeroes();
 
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
   displayHeroes = true;
 
@@ -48,7 +48,7 @@ export class HeroesComponent implements OnInit {
 
   protected displayHeroDetails(hero: Hero): void {
     console.log(hero.name);
-    this.selectedHero = hero;
+    // this.selectedHero = hero;
   }
 
   displayTime() {

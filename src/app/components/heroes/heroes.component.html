@@ -18,8 +18,10 @@
 <div *ngIf="displayHeroes" class="display-heroes">
   <h5> Display Heroes list</h5>
   <ul>
-    <li *ngFor="let hero of heroes; let idx = index" (click)="displayHeroDetails(hero)" [class.hero-selected] = "hero === selectedHero">
-      {{idx + 1}}. {{hero.name}}
+    <li *ngFor="let hero of heroes; let idx = index" (click)="displayHeroDetails(hero)" [class.hero-selected]="hero === selectedHero">
+      <a routerLink="/detail/{{hero.id}}">
+        {{idx + 1}}. {{hero.name}}
+      </a>
     </li>
   </ul>
 </div>
